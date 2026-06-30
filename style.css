@@ -1,0 +1,549 @@
+/* =====================================
+   PREMIUM BIRTHDAY WEBSITE
+   style.css - Part 1
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ff5fa2,#7b61ff,#00c2ff);
+    background-size:400% 400%;
+    animation:bgMove 15s ease infinite;
+    color:#fff;
+    overflow-x:hidden;
+    min-height:100vh;
+}
+
+/* Animated Gradient */
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Animated Stars */
+#stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+    background-image:
+        radial-gradient(circle,#ffffff 1px,transparent 1px),
+        radial-gradient(circle,#ffffff80 1px,transparent 1px);
+    background-size:60px 60px,120px 120px;
+    animation:starsMove 80s linear infinite;
+}
+
+@keyframes starsMove{
+    from{transform:translateY(0);}
+    to{transform:translateY(-400px);}
+}
+
+/* Hero Section */
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+}
+
+#title{
+    font-size:4rem;
+    font-weight:800;
+    text-shadow:0 0 15px #fff,0 0 30px gold;
+    animation:titlePulse 2s infinite;
+}
+
+@keyframes titlePulse{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+}
+
+.subtitle{
+    margin-top:15px;
+    font-size:1.6rem;
+    color:#fff7d6;
+}
+
+.message{
+    max-width:760px;
+    margin-top:30px;
+    padding:25px;
+    border-radius:20px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(15px);
+    line-height:1.8;
+    font-size:1.1rem;
+    box-shadow:0 8px 30px rgba(0,0,0,.2);
+}
+
+/* Premium Button */
+#wishBtn{
+    margin-top:35px;
+    padding:16px 40px;
+    font-size:1.1rem;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    color:#ff2d75;
+    background:#fff;
+    font-weight:700;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+#wishBtn:hover{
+    transform:translateY(-4px) scale(1.05);
+}
+
+/* Cake Section */
+.cake-section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.cake-section h2{
+    font-size:2.6rem;
+    margin-bottom:40px;
+}
+
+.cake{
+    width:280px;
+    height:180px;
+    margin:auto;
+    background:#ffb6c1;
+    border-radius:20px 20px 10px 10px;
+    position:relative;
+    box-shadow:0 20px 35px rgba(0,0,0,.25);
+}
+
+.icing{
+    position:absolute;
+    top:0;
+    width:100%;
+    height:40px;
+    background:#fff;
+    border-radius:20px 20px 40px 40px;
+}
+
+.candles{
+    position:absolute;
+    top:-45px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+}
+
+.candle{
+    width:14px;
+    height:55px;
+    background:#ffffff;
+    border-radius:4px;
+    position:relative;
+}
+
+.flame{
+    width:16px;
+    height:20px;
+    background:gold;
+    border-radius:50%;
+    position:absolute;
+    top:-18px;
+    left:-1px;
+    animation:flicker .4s infinite alternate;
+    box-shadow:0 0 15px orange;
+}
+
+@keyframes flicker{
+    from{
+        transform:scale(.9);
+        opacity:.9;
+    }
+    to{
+        transform:scale(1.1);
+        opacity:1;
+    }
+}
+
+/* Gift Section */
+.gift-section{
+    text-align:center;
+    padding:80px 20px;
+}
+
+#gift{
+    width:160px;
+    height:160px;
+    margin:30px auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:80px;
+    background:rgba(255,255,255,.15);
+    border-radius:25px;
+    cursor:pointer;
+    transition:.4s;
+    backdrop-filter:blur(10px);
+}
+
+#gift:hover{
+    transform:rotate(-10deg) scale(1.08);
+}
+
+/* Gallery */
+.gallery{
+    padding:80px 20px;
+}
+
+.gallery h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:2.6rem;
+}
+
+.photos{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.photos img{
+    width:100%;
+    border-radius:20px;
+    transition:.4s;
+    box-shadow:0 12px 30px rgba(0,0,0,.3);
+}
+
+.photos img:hover{
+    transform:scale(1.05) rotate(2deg);
+}
+
+/* Letter Card */
+.letter{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.card{
+    max-width:800px;
+    margin:30px auto;
+    padding:35px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    line-height:1.8;
+    font-size:1.1rem;
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:40px 20px;
+    font-size:1rem;
+    opacity:.9;
+}
+
+/* Fireworks Canvas */
+canvas{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+#title{
+    font-size:2.5rem;
+}
+
+.subtitle{
+    font-size:1.2rem;
+}
+
+.message{
+    font-size:1rem;
+}
+
+.cake{
+    width:220px;
+    height:150px;
+}
+
+.photos{
+    grid-template-columns:1fr;
+}
+}/* ==========================================
+   PREMIUM BIRTHDAY WEBSITE
+   style.css - Part 2
+==========================================*/
+
+/* Floating Hearts */
+.hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.hearts::before,
+.hearts::after{
+    content:"💖 💕 ❤️ 💗 💓 💞";
+    position:absolute;
+    width:100%;
+    font-size:30px;
+    animation:heartsUp 18s linear infinite;
+    opacity:.5;
+}
+
+.hearts::after{
+    animation-delay:9s;
+}
+
+@keyframes heartsUp{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-120vh);
+    }
+}
+
+/* Balloons */
+.balloon{
+    position:fixed;
+    bottom:-150px;
+    width:70px;
+    height:90px;
+    border-radius:50%;
+    animation:balloonFloat linear infinite;
+    opacity:.9;
+}
+
+.balloon::after{
+    content:"";
+    position:absolute;
+    width:2px;
+    height:80px;
+    background:#fff;
+    left:50%;
+    top:90px;
+}
+
+@keyframes balloonFloat{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-130vh);
+    }
+}
+
+/* Sparkles */
+.sparkle{
+    position:fixed;
+    width:6px;
+    height:6px;
+    background:#fff;
+    border-radius:50%;
+    box-shadow:0 0 12px #fff;
+    animation:sparkleAnim 2s infinite;
+}
+
+@keyframes sparkleAnim{
+    0%,100%{
+        opacity:0;
+        transform:scale(.3);
+    }
+    50%{
+        opacity:1;
+        transform:scale(1.6);
+    }
+}
+
+/* Rose Petals */
+.petal{
+    position:fixed;
+    width:18px;
+    height:18px;
+    background:#ff5f9e;
+    border-radius:60% 40% 60% 40%;
+    opacity:.8;
+    animation:petalFall linear infinite;
+}
+
+@keyframes petalFall{
+    from{
+        transform:translateY(-20vh) rotate(0deg);
+    }
+    to{
+        transform:translateY(120vh) rotate(720deg);
+    }
+}
+
+/* Gift Animation */
+#gift.open{
+    transform:scale(1.25) rotate(15deg);
+    background:linear-gradient(135deg,#ffd54f,#ff4081);
+    color:#fff;
+    box-shadow:0 0 35px rgba(255,255,255,.7);
+}
+
+/* Firework Glow */
+.firework-dot{
+    position:fixed;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    box-shadow:0 0 15px currentColor;
+}
+
+/* Card Hover */
+.card:hover{
+    transform:translateY(-8px);
+    transition:.4s;
+}
+
+/* Gallery Hover */
+.photos img:hover{
+    filter:brightness(1.1);
+}
+
+/* Button Glow */
+#wishBtn{
+    animation:buttonGlow 2s infinite alternate;
+}
+
+@keyframes buttonGlow{
+    from{
+        box-shadow:0 0 15px rgba(255,255,255,.3);
+    }
+    to{
+        box-shadow:0 0 30px rgba(255,255,255,.9);
+    }
+}
+
+/* Animated Footer */
+footer{
+    animation:footerGlow 3s infinite alternate;
+}
+
+@keyframes footerGlow{
+    from{
+        text-shadow:0 0 5px #fff;
+    }
+    to{
+        text-shadow:0 0 18px gold;
+    }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#2d1b4e;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ff6ba5;
+    border-radius:20px;
+}
+
+/* Glass Effect */
+.hero,
+.card,
+#gift,
+.message{
+    border:1px solid rgba(255,255,255,.25);
+}
+
+/* Fade In */
+.fade-in{
+    animation:fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Zoom In */
+.zoom{
+    animation:zoomIn .8s ease;
+}
+
+@keyframes zoomIn{
+    from{
+        transform:scale(.6);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* Pulse */
+.pulse{
+    animation:pulseAnim 1.5s infinite;
+}
+
+@keyframes pulseAnim{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.05);
+    }
+}
+
+/* Responsive Tweaks */
+@media(max-width:768px){
+
+.hero{
+    padding:20px;
+}
+
+.message{
+    padding:20px;
+}
+
+.card{
+    padding:20px;
+}
+
+#gift{
+    width:120px;
+    height:120px;
+    font-size:60px;
+}
+
+.balloon{
+    width:50px;
+    height:65px;
+}
+}
